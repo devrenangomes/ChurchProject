@@ -1,14 +1,66 @@
+
 import React from 'react';
+import { Instagram, Youtube } from 'lucide-react';
+import { ChristianCross } from '../../common/Icons';
 import styles from './Footer.module.css';
 
-const Footer = ({ year }) => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.content}>
-        <p>&copy; {year} Church Project. All rights reserved.</p>
-        <div className={styles.links}>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+      <div className={styles.container}>
+        <div className={styles.grid}>
+          <div>
+            <div className={styles.brand}>
+              <div className={styles.brandIcon}>
+                <ChristianCross size={16} />
+              </div>
+              <span>CATEDRAL DA <span className={styles.brandHighlight}>ADORAÇÃO</span></span>
+            </div>
+            <p className={styles.description}>
+              Filiada à Igreja do Evangelho Quadrangular. Levando a mensagem de Jesus Cristo aos quatro cantos da terra.
+            </p>
+            <div className={styles.dots}>
+              {/* Simbologia visual das 4 cores */}
+              <div className={styles.dot} style={{ backgroundColor: '#E30613' }} title="Jesus Salvador (Vermelho)"></div>
+              <div className={styles.dot} style={{ backgroundColor: '#FEDE00' }} title="Jesus Batizador (Amarelo)"></div>
+              <div className={styles.dot} style={{ backgroundColor: '#0075BF' }} title="Jesus Curador (Azul)"></div>
+              <div className={styles.dot} style={{ backgroundColor: '#6F2C91' }} title="Jesus Rei (Roxo)"></div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className={styles.title}>Links Rápidos</h4>
+            <ul className={styles.links}>
+              <li><a href="#home" className={styles.link}>Início</a></li>
+              <li><a href="#avisos" className={styles.link}>Avisos</a></li>
+              <li><a href="#celulas" className={styles.link}>Encontrar Célula</a></li>
+              <li><a href="#" className={styles.link}>Pedidos de Oração</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className={styles.title}>Grupos Missionários</h4>
+            <ul className={styles.links}>
+              <li><a href="#" className={styles.link}>GM de Crianças e Juniores</a></li>
+              <li><a href="#" className={styles.link}>GM de Jovens</a></li>
+              <li><a href="#" className={styles.link}>GM de Mulheres</a></li>
+              <li><a href="#" className={styles.link}>GM de Homens</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className={styles.title}>Fique Conectado</h4>
+            <div className={styles.socialIcons}>
+              <a href="#" className={styles.socialIcon}><Instagram size={20} /></a>
+              <a href="#" className={styles.socialIcon}><Youtube size={20} /></a>
+            </div>
+            <button className={styles.whatsappButton}>
+              Fale no WhatsApp
+            </button>
+          </div>
+        </div>
+        <div className={styles.copyright}>
+          &copy; 2023 Catedral da Adoração. Todos os direitos reservados.
         </div>
       </div>
     </footer>

@@ -1,0 +1,139 @@
+.section {
+  padding: 5rem 0;
+  background-color: #881337;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #991b1b;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F59E0B;
+  color: #881337;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+}
+
+.iconWrapper {
+  color: #F59E0B;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.locationSection {
+  margin-top: 4rem;
+}
+
+.locationTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.locationRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .locationRow {
+    flex-direction: row;
+  }
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e5e7eb;
+}
+
+.mapPin {
+  color: #F59E0B;
+}
+
+.mapButton {
+  border: 1px solid #F59E0B;
+  color: #F59E0B;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mapButton:hover {
+  background-color: #F59E0B;
+  color: #881337;
+}
