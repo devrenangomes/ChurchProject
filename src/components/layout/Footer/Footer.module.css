@@ -1,0 +1,35 @@
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .links {
+    margin-top: 0;
+  }
+}
