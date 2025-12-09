@@ -9,7 +9,7 @@ import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Navbar title="ChurchProject" />
       <div style={{ flex: 1 }}>
         <Routes>
