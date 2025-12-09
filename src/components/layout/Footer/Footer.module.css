@@ -97,7 +97,7 @@
 
 .socialIcon {
   background-color: #881337;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 9999px;
   color: #9ca3af;
   display: flex;
@@ -109,6 +109,7 @@
 .socialIcon:hover {
   background-color: #F59E0B;
   color: #881337;
+  transform: scale(1.1);
 }
 
 .whatsappButton {

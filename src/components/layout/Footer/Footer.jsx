@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Youtube } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import logo from '../../../assets/logo.jpg';
 import styles from './Footer.module.css';
 
@@ -48,8 +48,14 @@ const Footer = () => {
           <div>
             <h4 className={styles.title}>Fique Conectado</h4>
             <div className={styles.socialIcons}>
-              <a href="#" className={styles.socialIcon}><Instagram size={20} /></a>
-              <a href="#" className={styles.socialIcon}><Youtube size={20} /></a>
+              <a
+                href="https://www.instagram.com/ieqcatedraldaadoracao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialIcon}
+              >
+                <Instagram size={24} />
+              </a>
             </div>
             <button className={styles.whatsappButton}>
               Fale no WhatsApp
