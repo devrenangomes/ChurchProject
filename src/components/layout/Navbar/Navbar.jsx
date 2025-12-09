@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../../../assets/logo.jpg';
 import styles from './Navbar.module.css';
@@ -7,6 +8,8 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -15,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} `}>
+    <nav className={`${styles.navbar} ${scrolled || !isHome ? styles.scrolled : ''} `}>
       <div className={styles.container}>
         {/* Logo */}
         <div className={styles.logoContainer}>
