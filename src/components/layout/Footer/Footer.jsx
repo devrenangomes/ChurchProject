@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Instagram, MessageCircle } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.jpg';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
+
+  const handleNavigation = (e, targetId) => {
+    e.preventDefault();
+
+    if (isHome) {
+      scrollToSection(targetId);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(targetId);
+      }, 100);
+    }
+  };
+
+  const scrollToSection = (id) => {
+    if (!id || id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -28,10 +64,9 @@ const Footer = () => {
           <div>
             <h4 className={styles.title}>Links Rápidos</h4>
             <ul className={styles.links}>
-              <li><a href="/" className={styles.link}>Início</a></li>
-              <li><a href="/#avisos" className={styles.link}>Avisos</a></li>
-              <li><a href="/#celulas" className={styles.link}>Encontrar Célula</a></li>
-              <li><a href="#" className={styles.link}>Pedidos de Oração</a></li>
+              <li><a href="/" onClick={(e) => handleNavigation(e, 'home')} className={styles.link}>Início</a></li>
+              <li><a href="/#avisos" onClick={(e) => handleNavigation(e, 'avisos')} className={styles.link}>Avisos</a></li>
+              <li><a href="/#celulas" onClick={(e) => handleNavigation(e, 'celulas')} className={styles.link}>Encontrar Célula</a></li>
             </ul>
           </div>
 
