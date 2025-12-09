@@ -47,16 +47,15 @@ const Footer = () => {
 
           <div>
             <h4 className={styles.title}>Fique Conectado</h4>
-            <div className={styles.socialIcons}>
-              <a
-                href="https://www.instagram.com/ieqcatedraldaadoracao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialIcon}
-              >
-                <Instagram size={24} />
-              </a>
-            </div>
+            <a
+              href="https://www.instagram.com/ieqcatedraldaadoracao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.instagramButton}
+            >
+              <Instagram size={20} />
+              Siga no Instagram
+            </a>
             <button className={styles.whatsappButton}>
               Fale no WhatsApp
             </button>
