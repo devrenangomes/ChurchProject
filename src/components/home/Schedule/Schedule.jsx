@@ -49,7 +49,7 @@ const Schedule = () => {
               <span>Av. Dom Vicente Zico, 821 - Cidade Nova, Ananindeua - PA, 67133-390</span>
             </div>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Av.+Dom+Vicente+Zico,+821+-+Cidade+Nova,+Ananindeua+-+PA,+67133-390"
+              href="https://maps.app.goo.gl/9MXuMcGryp1PBCCx9"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.mapButton}
