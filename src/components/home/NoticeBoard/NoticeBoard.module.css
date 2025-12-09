@@ -1,73 +1,78 @@
 .section {
-  padding: 5rem 0;
+  padding: var(--section-padding);
   width: 100%;
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  max-width: 1200px;
+  max-width: var(--container-max);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .eyebrow {
-  color: #6B21A8;
+  color: var(--brand-purple);
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
 .title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #881337;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--brand-red);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 }
 
 .subtitle {
-  color: #4b5563;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
 }
 
 .filterButton {
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.925rem;
   font-weight: 600;
   border: 1px solid #e5e7eb;
   cursor: pointer;
   transition: all 0.3s;
-  background-color: white;
-  color: #6b7280;
+  background-color: var(--bg-white);
+  color: var(--text-secondary);
 }
 
 .filterButton:hover {
   background-color: #f9fafb;
+  border-color: #d1d5db;
 }
 
 .filterButtonActive {
-  background-color: #881337;
-  color: white;
-  border-color: #881337;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: var(--brand-red);
+  color: var(--text-white);
+  border-color: var(--brand-red);
+  box-shadow: var(--shadow-md);
 }
 
 .grid {
@@ -89,21 +94,24 @@
 }
 
 .card {
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
   border: 1px solid #f3f4f6;
   cursor: pointer;
-  transition: box-shadow 0.3s;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
 }
 
 .imageContainer {
-  height: 12rem;
+  height: 14rem;
   overflow: hidden;
   position: relative;
 }
@@ -112,21 +120,22 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: #F59E0B;
-  color: #881337;
+  background-color: var(--brand-gold);
+  color: var(--brand-red);
   font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
   z-index: 10;
+  text-transform: uppercase;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.6s;
 }
 
 .card:hover .image {
@@ -134,36 +143,41 @@
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .dateRow {
   display: flex;
   align-items: center;
-  color: #9ca3af;
-  font-size: 0.75rem;
+  color: var(--text-light);
+  font-size: 0.825rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
-  column-gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  column-gap: 0.35rem;
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #881337;
-  margin-bottom: 0.75rem;
+  color: var(--brand-red);
+  margin-bottom: 1rem;
   transition: color 0.3s;
+  line-height: 1.3;
 }
 
 .card:hover .cardTitle {
-  color: #F59E0B;
+  color: var(--brand-gold);
 }
 
 .readMore {
   display: flex;
   align-items: center;
-  color: #881337;
-  font-weight: 600;
-  font-size: 0.875rem;
-  margin-top: 1rem;
+  color: var(--brand-red);
+  font-weight: 700;
+  font-size: 0.925rem;
+  margin-top: auto;
+  /* Push to bottom */
 }

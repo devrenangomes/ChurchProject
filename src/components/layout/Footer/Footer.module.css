@@ -1,7 +1,7 @@
 .footer {
-  background-color: #4a0418;
-  color: #9ca3af;
-  padding: 3rem 0;
+  background-color: var(--bg-footer);
+  color: var(--text-light);
+  padding: 4rem 0;
   border-top: 1px solid #7f1d1d;
 }
 
@@ -9,16 +9,22 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
-  max-width: 1200px;
+  max-width: var(--container-max);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 @media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -27,28 +33,30 @@
 .brand {
   display: flex;
   align-items: center;
-  column-gap: 0.5rem;
-  color: white;
+  column-gap: 0.75rem;
+  color: var(--text-white);
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .brandLogo {
-  height: 2rem;
+  height: 2.5rem;
+  /* Slightly larger */
   width: auto;
   object-fit: contain;
   border-radius: 0.25rem;
 }
 
 .brandHighlight {
-  color: #F59E0B;
+  color: var(--brand-gold);
 }
 
 .description {
   font-size: 0.875rem;
-  line-height: 1.625;
-  margin-bottom: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .dots {
@@ -60,13 +68,14 @@
 .dot {
   width: 0.75rem;
   height: 0.75rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-full);
 }
 
 .title {
-  color: white;
+  color: var(--text-white);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .links {
@@ -75,8 +84,8 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 0.5rem;
-  font-size: 0.875rem;
+  row-gap: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .link {
@@ -86,7 +95,7 @@
 }
 
 .link:hover {
-  color: #F59E0B;
+  color: var(--brand-gold);
 }
 
 .socialIcons {
@@ -96,10 +105,10 @@
 }
 
 .socialIcon {
-  background-color: #881337;
+  background-color: var(--brand-red);
   padding: 0.75rem;
-  border-radius: 9999px;
-  color: #9ca3af;
+  border-radius: var(--radius-full);
+  color: var(--text-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,8 +116,8 @@
 }
 
 .socialIcon:hover {
-  background-color: #F59E0B;
-  color: #881337;
+  background-color: var(--brand-gold);
+  color: var(--brand-red);
   transform: scale(1.1);
 }
 
@@ -116,13 +125,13 @@
   width: 100%;
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: white;
-  padding: 0.5rem 0;
-  border-radius: 0.25rem;
+  padding: 0.625rem 0;
+  border-radius: var(--radius-sm);
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s;
-  font-size: 0.875rem;
+  transition: all 0.3s;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,30 +142,34 @@
 
 .instagramButton:hover {
   opacity: 0.9;
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .whatsappButton {
   width: 100%;
   background-color: #16a34a;
   color: white;
-  padding: 0.5rem 0;
-  border-radius: 0.25rem;
+  padding: 0.625rem 0;
+  border-radius: var(--radius-sm);
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 0.875rem;
+  transition: all 0.3s;
+  font-size: 0.9rem;
 }
 
 .whatsappButton:hover {
   background-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .copyright {
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #7f1d1d;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
 }

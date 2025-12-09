@@ -1,26 +1,27 @@
 .section {
-  padding: 5rem 0;
-  background-color: #881337;
-  color: white;
+  padding: var(--section-padding);
+  background-color: var(--brand-red);
+  color: var(--text-white);
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
-  max-width: 1200px;
+  max-width: var(--container-max);
   text-align: center;
 }
 
 .title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  color: var(--text-white);
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 }
 
@@ -28,7 +29,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 64rem;
+  max-width: 72rem;
   margin: 0 auto;
 }
 
@@ -40,60 +41,72 @@
 
 .card {
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #991b1b;
+  /* Glass effect */
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
 }
 
 .card:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .badge {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #F59E0B;
-  color: #881337;
+  background-color: var(--brand-gold);
+  color: var(--brand-red);
   font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.5rem;
+  font-weight: 800;
+  padding: 0.35rem 0.75rem;
+  border-bottom-left-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
 }
 
 .iconWrapper {
-  color: #F59E0B;
-  margin-bottom: 1rem;
+  color: var(--brand-gold);
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--text-white);
 }
 
 .cardDesc {
-  color: #e5e7eb;
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  min-height: 3rem;
+  /* Align times */
 }
 
 .time {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--brand-gold);
 }
 
 .locationSection {
-  margin-top: 4rem;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .locationTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
@@ -102,7 +115,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -114,26 +127,30 @@
 .address {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #e5e7eb;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem;
 }
 
 .mapPin {
-  color: #F59E0B;
+  color: var(--brand-gold);
 }
 
 .mapButton {
-  border: 1px solid #F59E0B;
-  color: #F59E0B;
-  padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
+  border: 2px solid var(--brand-gold);
+  color: var(--brand-gold);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .mapButton:hover {
-  background-color: #F59E0B;
-  color: #881337;
+  background-color: var(--brand-gold);
+  color: var(--brand-red);
+  transform: scale(1.05);
 }
