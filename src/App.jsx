@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Ministries from './pages/Ministries/Ministries';
 import Contact from './pages/Contact/Contact';
+import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </div>
       <Footer year={new Date().getFullYear()} />

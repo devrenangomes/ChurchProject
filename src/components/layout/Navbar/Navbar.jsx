@@ -32,6 +32,7 @@ const Navbar = () => {
           <a href="#avisos" className={styles.navLink}>Avisos</a>
           <a href="#celulas" className={styles.navLink}>Células</a>
           <a href="#horarios" className={styles.navLink}>Agenda</a>
+          <a href="/gallery" className={styles.navLink}>Galeria</a>
 
           <button className={styles.donateButton}>
             Contribua
@@ -51,6 +52,7 @@ const Navbar = () => {
           <a href="#avisos" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Avisos</a>
           <a href="#celulas" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Células</a>
           <a href="#horarios" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Agenda</a>
+          <a href="/gallery" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Galeria</a>
           <button className={styles.mobileDonateButton}>
             Quero Contribuir
           </button>

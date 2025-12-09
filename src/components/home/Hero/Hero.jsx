@@ -20,10 +20,7 @@ const Hero = () => {
           <a href="#horarios" className={styles.primaryButton}>
             Planeje sua Visita
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-            <PlayCircle size={20} />
-            <span>Assistir Online</span>
-          </a>
+
         </div>
       </div>
     </section>
