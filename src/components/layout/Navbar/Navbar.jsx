@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ChristianCross } from '../../common/Icons';
+import logo from '../../../assets/logo.jpg';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -14,13 +15,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} `}>
       <div className={styles.container}>
         {/* Logo */}
         <div className={styles.logoContainer}>
-          <div className={styles.logoIcon}>
-            <ChristianCross size={20} />
-          </div>
+          <img src={logo} alt="Logo Catedral da Adoração" className={styles.logoImage} />
           <div className={styles.logoText}>
             <span className={styles.logoSubtitle}>CATEDRAL DA</span>
             <span className={styles.logoTitle}>ADORAÇÃO</span>
