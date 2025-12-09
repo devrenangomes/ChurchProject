@@ -45,7 +45,7 @@ const Navbar = () => {
     } else {
       const element = document.getElementById(id);
       if (element) {
-        const headerOffset = 80;
+        const headerOffset = 60;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
