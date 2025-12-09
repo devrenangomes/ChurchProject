@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../../../assets/logo.jpg';
 import styles from './Navbar.module.css';
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -16,6 +17,45 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavigation = (e, targetId) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    if (isHome) {
+      scrollToSection(targetId);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(targetId);
+      }, 100);
+    }
+  };
+
+  const handleGalleryClick = (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+    navigate('/gallery');
+    window.scrollTo(0, 0);
+  };
+
+  const scrollToSection = (id) => {
+    if (!id || id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
 
   return (
     <nav className={`${styles.navbar} ${scrolled || !isHome ? styles.scrolled : ''} `}>
@@ -31,11 +71,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
-          <a href="/" className={styles.navLink}>Início</a>
-          <a href="/#avisos" className={styles.navLink}>Avisos</a>
-          <a href="/#celulas" className={styles.navLink}>Células</a>
-          <a href="/#horarios" className={styles.navLink}>Agenda</a>
-          <a href="/gallery" className={styles.navLink}>Galeria</a>
+          <a href="/" onClick={(e) => handleNavigation(e, 'home')} className={styles.navLink}>Início</a>
+          <a href="#avisos" onClick={(e) => handleNavigation(e, 'avisos')} className={styles.navLink}>Avisos</a>
+          <a href="#celulas" onClick={(e) => handleNavigation(e, 'celulas')} className={styles.navLink}>Células</a>
+          <a href="#horarios" onClick={(e) => handleNavigation(e, 'horarios')} className={styles.navLink}>Agenda</a>
+          <a href="/gallery" onClick={handleGalleryClick} className={styles.navLink}>Galeria</a>
 
           <button className={styles.donateButton}>
             Contribua
@@ -51,11 +91,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className={styles.mobileMenu}>
-          <a href="/" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Início</a>
-          <a href="/#avisos" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Avisos</a>
-          <a href="/#celulas" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Células</a>
-          <a href="/#horarios" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Agenda</a>
-          <a href="/gallery" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Galeria</a>
+          <a href="/" onClick={(e) => handleNavigation(e, 'home')} className={styles.mobileLink}>Início</a>
+          <a href="#avisos" onClick={(e) => handleNavigation(e, 'avisos')} className={styles.mobileLink}>Avisos</a>
+          <a href="#celulas" onClick={(e) => handleNavigation(e, 'celulas')} className={styles.mobileLink}>Células</a>
+          <a href="#horarios" onClick={(e) => handleNavigation(e, 'horarios')} className={styles.mobileLink}>Agenda</a>
+          <a href="/gallery" onClick={handleGalleryClick} className={styles.mobileLink}>Galeria</a>
           <button className={styles.mobileDonateButton}>
             Quero Contribuir
           </button>
