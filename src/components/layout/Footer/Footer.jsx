@@ -28,9 +28,9 @@ const Footer = () => {
           <div>
             <h4 className={styles.title}>Links Rápidos</h4>
             <ul className={styles.links}>
-              <li><a href="#home" className={styles.link}>Início</a></li>
-              <li><a href="#avisos" className={styles.link}>Avisos</a></li>
-              <li><a href="#celulas" className={styles.link}>Encontrar Célula</a></li>
+              <li><a href="/" className={styles.link}>Início</a></li>
+              <li><a href="/#avisos" className={styles.link}>Avisos</a></li>
+              <li><a href="/#celulas" className={styles.link}>Encontrar Célula</a></li>
               <li><a href="#" className={styles.link}>Pedidos de Oração</a></li>
             </ul>
           </div>

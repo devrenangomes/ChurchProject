@@ -31,10 +31,10 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
-          <a href="#home" className={styles.navLink}>Início</a>
-          <a href="#avisos" className={styles.navLink}>Avisos</a>
-          <a href="#celulas" className={styles.navLink}>Células</a>
-          <a href="#horarios" className={styles.navLink}>Agenda</a>
+          <a href="/" className={styles.navLink}>Início</a>
+          <a href="/#avisos" className={styles.navLink}>Avisos</a>
+          <a href="/#celulas" className={styles.navLink}>Células</a>
+          <a href="/#horarios" className={styles.navLink}>Agenda</a>
           <a href="/gallery" className={styles.navLink}>Galeria</a>
 
           <button className={styles.donateButton}>
@@ -51,10 +51,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className={styles.mobileMenu}>
-          <a href="#home" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Início</a>
-          <a href="#avisos" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Avisos</a>
-          <a href="#celulas" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Células</a>
-          <a href="#horarios" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Agenda</a>
+          <a href="/" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Início</a>
+          <a href="/#avisos" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Avisos</a>
+          <a href="/#celulas" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Células</a>
+          <a href="/#horarios" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Agenda</a>
           <a href="/gallery" className={styles.mobileLink} onClick={() => setIsOpen(false)}>Galeria</a>
           <button className={styles.mobileDonateButton}>
             Quero Contribuir
