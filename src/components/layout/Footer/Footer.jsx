@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, MessageCircle } from 'lucide-react';
 import logo from '../../../assets/logo.jpg';
 import styles from './Footer.module.css';
 
@@ -57,6 +57,7 @@ const Footer = () => {
               Siga no Instagram
             </a>
             <button className={styles.whatsappButton}>
+              <MessageCircle size={20} />
               Fale no WhatsApp
             </button>
           </div>
