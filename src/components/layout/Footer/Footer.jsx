@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Instagram, Youtube } from 'lucide-react';
-import { ChristianCross } from '../../common/Icons';
+import logo from '../../../assets/logo.jpg';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -11,9 +10,7 @@ const Footer = () => {
         <div className={styles.grid}>
           <div>
             <div className={styles.brand}>
-              <div className={styles.brandIcon}>
-                <ChristianCross size={16} />
-              </div>
+              <img src={logo} alt="Logo IEQ" className={styles.brandLogo} />
               <span>CATEDRAL DA <span className={styles.brandHighlight}>ADORAÇÃO</span></span>
             </div>
             <p className={styles.description}>
@@ -60,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.copyright}>
-          &copy; 2023 Catedral da Adoração. Todos os direitos reservados.
+          &copy; 2025 Catedral da Adoração. Todos os direitos reservados.
         </div>
       </div>
     </footer>

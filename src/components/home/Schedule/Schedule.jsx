@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Users, Youtube, MapPin } from 'lucide-react';
+import { Calendar, Users, MapPin } from 'lucide-react';
 import styles from './Schedule.module.css';
 
 const Schedule = () => {
@@ -15,8 +15,8 @@ const Schedule = () => {
               <Calendar size={40} />
             </div>
             <h3 className={styles.cardTitle}>Domingo</h3>
-            <p className={styles.cardDesc}>Culto de Adoração e Família</p>
-            <div className={styles.time}>10h e 18h</div>
+            <p className={styles.cardDesc}>Culto da Família</p>
+            <div className={styles.time}>8h30 e 18h30</div>
           </div>
 
           {/* Card 2 */}
@@ -26,18 +26,18 @@ const Schedule = () => {
               <Users size={40} />
             </div>
             <h3 className={styles.cardTitle}>Quarta-feira</h3>
-            <p className={styles.cardDesc}>Noite da Vitória</p>
-            <div className={styles.time}>20h</div>
+            <p className={styles.cardDesc}>Busca pelo Espírito Santo</p>
+            <div className={styles.time}>19h30</div>
           </div>
 
           {/* Card 3 */}
           <div className={styles.card}>
             <div className={styles.iconWrapper}>
-              <Youtube size={40} />
+              <Users size={40} />
             </div>
-            <h3 className={styles.cardTitle}>Online</h3>
-            <p className={styles.cardDesc}>Transmissão Simultânea</p>
-            <div className={styles.time}>Youtube</div>
+            <h3 className={styles.cardTitle}>Sábado</h3>
+            <p className={styles.cardDesc}>Culto de Jovens</p>
+            <div className={styles.time}>19h30</div>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ const Schedule = () => {
           <div className={styles.locationRow}>
             <div className={styles.address}>
               <MapPin size={20} className={styles.mapPin} />
-              <span>Av. das Nações, 1234 - Centro</span>
+              <span>Av. Dom Vicente Zico, 821 - Cidade Nova, Ananindeua - PA, 67133-390</span>
             </div>
             <button className={styles.mapButton}>
               Ver no Mapa

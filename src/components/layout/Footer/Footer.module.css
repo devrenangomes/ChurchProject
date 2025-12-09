@@ -34,14 +34,11 @@
   margin-bottom: 1rem;
 }
 
-.brandIcon {
-  background-color: #F59E0B;
-  padding: 0.375rem;
+.brandLogo {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
   border-radius: 0.25rem;
-  color: #881337;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .brandHighlight {
