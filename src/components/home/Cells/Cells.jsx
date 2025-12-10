@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Users, Cross } from 'lucide-react';
 import styles from './Cells.module.css';
 import CellForm from './CellForm';
 
+const cellImages = [
+  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1511632765486-a01980968a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+];
+
 const Cells = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % cellImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="celulas" className={styles.section}>
       <div className={styles.container}>
@@ -43,7 +58,16 @@ const Cells = () => {
           {/* Círculo decorativo Amarelo (Batismo) */}
           <div className={styles.circleYellow}></div>
 
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Grupo de amigos conversando" className={styles.image} />
+          <div className={styles.carouselContainer}>
+            {cellImages.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Célula Catedral ${index + 1}`}
+                className={`${styles.image} ${index === currentImage ? styles.activeImage : ''}`}
+              />
+            ))}
+          </div>
 
           {/* Círculo decorativo Roxo (Rei) */}
           <div className={styles.circlePurple}></div>

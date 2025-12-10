@@ -11,7 +11,7 @@ const Hero = () => {
     };
 
     return (
-        <section className={styles.hero}>
+        <section id="home" className={styles.section}>
             <div className={styles.overlay}></div>
             <div className={styles.content}>
                 <h1 className={styles.title}>
