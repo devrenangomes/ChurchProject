@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Cross } from 'lucide-react';
 import styles from './Cells.module.css';
+import CellForm from './CellForm';
 
 const Cells = () => {
   return (
@@ -34,15 +35,7 @@ const Cells = () => {
             </div>
           </div>
 
-          <div className={styles.searchBox}>
-            <h4 className={styles.searchLabel}>Encontre uma célula perto de você</h4>
-            <div className={styles.inputGroup}>
-              <input type="text" placeholder="Digite seu Bairro" className={styles.input} />
-              <button className={styles.searchButton}>
-                Buscar
-              </button>
-            </div>
-          </div>
+          <CellForm />
         </div>
         <div className={styles.imageSection}>
           {/* Círculo decorativo Azul (Cura) */}

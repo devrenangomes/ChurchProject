@@ -131,3 +131,28 @@
   color: var(--brand-red);
   transform: translateY(-2px);
 }
+
+.socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+}
+
+.socialButton:hover {
+    background: #e1306c;
+    border-color: #e1306c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+}

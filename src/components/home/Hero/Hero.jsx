@@ -1,30 +1,42 @@
 import React from 'react';
-import { PlayCircle } from 'lucide-react';
+import { Play, Instagram } from 'lucide-react';
 import styles from './Hero.module.css';
 
 const Hero = () => {
-  return (
-    <section id="home" className={styles.section}>
-      {/* Overlay */}
-      <div className={styles.overlay}></div>
+    const scrollToSchedule = () => {
+        const scheduleSection = document.getElementById('horarios');
+        if (scheduleSection) {
+            scheduleSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-      <div className={styles.content}>
-        <span className={styles.subtitle}>Bem-vindo à Catedral</span>
-        <h1 className={styles.title}>
-          Um lugar de adoração,<br />cura e salvação.
-        </h1>
-        <p className={styles.description}>
-          Jesus Cristo é o Salvador, Batizador com o Espírito Santo, Curador e Rei que Breve Virá.
-        </p>
-        <div className={styles.buttonGroup}>
-          <a href="#horarios" className={styles.primaryButton}>
-            Planeje sua Visita
-          </a>
-
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <section className={styles.hero}>
+            <div className={styles.overlay}></div>
+            <div className={styles.content}>
+                <h1 className={styles.title}>
+                    Bem-vindo à <span className={styles.highlight}>Catedral da Adoração</span>
+                </h1>
+                <p className={styles.subtitle}>
+                    Um lugar de adoração, cura e salvação. Venha fazer parte desta família.
+                </p>
+                <div className={styles.buttonGroup}>
+                    <button onClick={scrollToSchedule} className={styles.primaryButton}>
+                        Planeje sua Visita
+                    </button>
+                    <a
+                        href="https://www.instagram.com/ieqcatedraldaadoracao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.socialButton}
+                    >
+                        <Instagram size={20} />
+                        Siga no Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Hero;
